@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>Typing speed tester </title>
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/dark.css" id="dark-theme" disabled>
+        
+        <script src = "https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/marked/0.7.0/marked.min.js"></script>
+        </head>
+    <body>
+        <h1>Typing Speed Tester</h1>
+        <button id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+        <div class = "text-container"> 
+            <p>Type the text below as fast as you can. Your typing speed will be calculated based on the time taken to complete the text.</p>
+                <div id = "text-display">
+                 <p>Press the "Start" button to begin.</p>
+                </div>
+                <button id = "start-button">Start</button>
+          </div>
+        
+            <div class = "text-box">
+                <div id = "word-count">WPM: <span id = "count">0</span></div>
+                <div id = "accuracy">Accuracy: <span id = "accuracy-percentage">0</span>%</div>
+                <div id = "timer">Time: <span id = "time">0</span> seconds</div>
+                <div id="error">Error : </div>
+            </div>
+            <input type="text" id="user-input" placeholder="Start typing here..." autocomplete="off" />
+            
+            <div id = "result"></div>
+            <button id = "reset-button">Reset</button>
+        <script src = "JavaScript/main.js"></script>
+        <script src = "JavaScript/theme.js"></script>
+    </body>
+</html>
