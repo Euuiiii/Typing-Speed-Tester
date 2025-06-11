@@ -55,8 +55,7 @@ h1 {
     border-radius: 0.75rem;
     min-height: 200px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
     text-align: left;
     transition: all 0.3s ease;
 }
@@ -225,6 +224,20 @@ h1 {
 
 #error {
     color: var(--error-color);
+}
+
+.author-section {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+}
+
+.author {
+    opacity: 0.5;
+    font-style: italic;
+    font-size: 1rem;
+    margin-left: auto;
 }
 
 @media (max-width: 768px) {
