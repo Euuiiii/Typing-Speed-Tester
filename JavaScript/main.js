@@ -9,7 +9,7 @@ const userInput = document.getElementById('user-input');
 let startTime = null;
 let timerInterval = null;
 
-// Start button logic
+// start button -> loads a random quote -> resets UI -> enables typing
 startBtn.addEventListener("click", () => {
   startBtn.disabled = true;
   resetBtn.disabled = false;
@@ -43,7 +43,7 @@ document.getElementById('count').textContent = "0";
 document.getElementById('accuracy-percentage').textContent = "0";
 timer.textContent = "00:00";
 
-// Reset button logic
+// reset button -> resets UI and input fields to initial state
 resetBtn.addEventListener("click", () => {
   startBtn.disabled = false;
   resetBtn.disabled = true;
@@ -59,7 +59,7 @@ resetBtn.addEventListener("click", () => {
   clearInterval(timerInterval);
 });
 
-// Unified input event logic
+// typing -> updates timer -> error count -> WPM and accuracy in real time
 userInput.addEventListener("input", () => {
   const quoteTextElem = textDisplay.querySelector('.quote-text');
   if (!quoteTextElem) return;
@@ -77,19 +77,37 @@ userInput.addEventListener("input", () => {
     }, 1000);
   }
 
-  // Calculate words typed and correct words
-  const inputWords = input.trim().split(/\s+/).filter(word => word.length > 0);
-  const textWords = text.trim().split(/\s+/);
+  // input and text into words
+  const inputWords = input.trim().split(/\s+/);
+  const textWords = text.split(/\s+/);
+
+  // last word is completed ?
+  const lastChar = input.slice(-1);
+  const completedWordsCount = lastChar === ' ' ? inputWords.length : inputWords.length - 1;
+
+  // Error counting 
+  let errorCount = 0;
+  for (let i = 0; i < completedWordsCount; i++) {
+    if (inputWords[i] !== textWords[i]) errorCount++;
+  }
+  document.getElementById('error').textContent = `Error: ${errorCount}`;
+
+  // words typed -> correct words -> WPM and accuracy
   const wordsTyped = inputWords.length;
   let correctWords = 0;
   for (let i = 0; i < inputWords.length; i++) {
     if (inputWords[i] === textWords[i]) correctWords++;
   }
 
-  document.getElementById('count').textContent = wordsTyped;
+  const elapsedSeconds = startTime ? (Date.now() - startTime) / 1000 : 0;
+  const elapsedMinutes = elapsedSeconds / 60;
+  const wpmValue = elapsedMinutes > 0 ? Math.round(wordsTyped / elapsedMinutes) : 0;
+  document.getElementById('count').textContent = wpmValue;
+
   accuracy.textContent = ((correctWords / wordsTyped) * 100 || 0).toFixed(2);
 
-  // If completed
+
+  //this need to be updated and the user will get the message as their typing speed 
   if (input === text) {
     userInput.disabled = true;
     startBtn.disabled = false;
@@ -98,3 +116,9 @@ userInput.addEventListener("input", () => {
     alert("Congratulations! You've completed the typing test.");
   }
 });
+
+/* Things to improve:
+1. Highlights errors in the input.
+2. Store user statistics (WPM, accuracy) in local storage or a database for future reference.
+3. Time mods to be added 
+4. Message as per typing speed. */
