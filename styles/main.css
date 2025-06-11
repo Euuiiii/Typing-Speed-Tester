@@ -67,7 +67,9 @@ h1 {
 }
 
 #user-input {
-    width: 800px;
+    width: 100%;
+    max-width: 800px;
+    min-width: 200px;
     height: 200px;
     padding: 1rem;
     font-size: 1.125rem;
@@ -80,12 +82,16 @@ h1 {
     vertical-align: top;
     text-align: left;
     line-height: 1.6;
+    box-sizing: border-box;
 }
 
-#user-input:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+
+@media (max-width: 768px) {
+    #user-input {
+        font-size: 1rem;
+        height: 120px;
+        min-width: 0;
+    }
 }
 
 #start-button {

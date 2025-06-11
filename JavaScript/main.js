@@ -4,6 +4,7 @@ const wpm = document.getElementById('word-count');
 const accuracy = document.getElementById('accuracy-percentage');
 const timer = document.getElementById('timer');
 const textDisplay = document.getElementById('text-display');
+const userInput = document.getElementById('user-input');
 
 startBtn.addEventListener("click", () => {
   startBtn.disabled = true;
@@ -20,16 +21,18 @@ startBtn.addEventListener("click", () => {
     });
 });
 
-wpm.textContent = "WPM : 0";
-accuracy.textContent = "0";
+document.getElementById('count').textContent = "0";
+document.getElementById('accuracy-percentage').textContent = "0";
 timer.textContent = "00:00";
 
 
 resetBtn.addEventListener("click", () => {
   startBtn.disabled = false;
   resetBtn.disabled = true;
-  wpm.textContent = "0";
-  accuracy.textContent = "0%";
+  document.getElementById('count').textContent = "0";
+  document.getElementById('accuracy-percentage').textContent = "0";
   timer.textContent = "00:00";
-  textDisplay.textContent = "";
+  textDisplay.innerHTML = '<p>Press the "Start" button to begin.</p>';
+  userInput.value = '';
+  userInput.placeholder = 'Start typing here...';
 });

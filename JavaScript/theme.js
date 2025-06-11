@@ -12,5 +12,4 @@ themeToggle.addEventListener('click', () => {
     setThemeIcon();
 });
 
-
 setThemeIcon();
