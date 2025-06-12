@@ -107,14 +107,33 @@ userInput.addEventListener("input", () => {
   accuracy.textContent = ((correctWords / wordsTyped) * 100 || 0).toFixed(2);
 
 
+  if (input.length = text.length){
+    alert("You have completed your quote")
+  }
+
   //this need to be updated and the user will get the message as their typing speed 
   if (input === text) {
     userInput.disabled = true;
     startBtn.disabled = false;
     resetBtn.disabled = false;
     clearInterval(timerInterval);
-    alert("Congratulations! You've completed the typing test.");
+
+    const popup = document.getElementById('result-popup');
+    const popupMsg = document.getElementById('popup-message');
+    popupMsg.textContent = `Congratulations! Your typing speed is ${wpmValue} WPM.`;
+    popup.style.display = 'flex';
   }
+});
+
+document.getElementById('close-popup').onclick = function() {
+  document.getElementById('result-popup').style.display = 'none';
+};
+
+textDisplay.addEventListener('copy', function(e) {
+  e.preventDefault();
+});
+textDisplay.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
 });
 
 /* Things to improve:

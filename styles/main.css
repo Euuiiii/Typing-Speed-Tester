@@ -284,3 +284,36 @@ h1 {
     from, to { border-color: transparent }
     50% { border-color: var(--primary-color) }
 }
+
+.popup {
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.popup-content {
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.15);
+  text-align: center;
+  position: relative;
+}
+.close {
+  position: absolute;
+  top: 0.5rem; right: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.quote-text {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none;
+}
