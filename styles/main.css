@@ -317,3 +317,14 @@ h1 {
     -ms-user-select: none;
     pointer-events: none;
 }
+
+.error-word {
+  color: #e11d48; /* red */
+  background: #ffe4e6;
+  border-radius: 0.2em;
+}
+.correct-word {
+  color: inherit;
+  background: #dcfce7;
+  border-radius: 0.2em;
+}

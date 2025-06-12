@@ -17,8 +17,11 @@ startBtn.addEventListener("click", () => {
     .then(res => res.json())
     .then(data => {
       const randomQuote = data[Math.floor(Math.random() * data.length)];
+      const quoteWords = randomQuote.text.split(' ');
       textDisplay.innerHTML = `
-        <span class="quote-text">${randomQuote.text}</span>
+        <span class="quote-text">
+          ${quoteWords.map(word => `<span class="quote-word">${word}</span>`).join(' ')}
+        </span>
         <div class="author-section">
           ${randomQuote.author ? `<span class="author">— ${randomQuote.author}</span>` : ""}
         </div>
@@ -106,13 +109,8 @@ userInput.addEventListener("input", () => {
 
   accuracy.textContent = ((correctWords / wordsTyped) * 100 || 0).toFixed(2);
 
-
-  if (input.length = text.length){
-    alert("You have completed your quote")
-  }
-
   //this need to be updated and the user will get the message as their typing speed 
-  if (input === text) {
+  if (inputWords.length === textWords.length && inputWords.every((w, i) => w === textWords[i] || w !== undefined)) {
     userInput.disabled = true;
     startBtn.disabled = false;
     resetBtn.disabled = false;
@@ -120,8 +118,24 @@ userInput.addEventListener("input", () => {
 
     const popup = document.getElementById('result-popup');
     const popupMsg = document.getElementById('popup-message');
-    popupMsg.textContent = `Congratulations! Your typing speed is ${wpmValue} WPM.`;
+    if (errorCount === 0) {
+      popupMsg.textContent = `🎉 Perfect! Your typing speed is ${wpmValue} WPM and an accuracy of ${accuracy.textContent}%.`;
+    } else {
+      popupMsg.textContent = `Your typing speed is ${wpmValue} WPM with ${errorCount} error(s) and an accuracy of ${accuracy.textContent}%.`;
+    }
     popup.style.display = 'flex';
+  }
+
+  const quoteWordSpans = textDisplay.querySelectorAll('.quote-word');
+  for (let i = 0; i < quoteWordSpans.length; i++) {
+    quoteWordSpans[i].classList.remove('error-word', 'correct-word');
+    if (inputWords[i] !== undefined) {
+      if (inputWords[i] === textWords[i]) {
+        quoteWordSpans[i].classList.add('correct-word');
+      } else {
+        quoteWordSpans[i].classList.add('error-word');
+      }
+    }
   }
 });
 
@@ -137,7 +151,6 @@ textDisplay.addEventListener('contextmenu', function(e) {
 });
 
 /* Things to improve:
-1. Highlights errors in the input.
-2. Store user statistics (WPM, accuracy) in local storage or a database for future reference.
-3. Time mods to be added 
-4. Message as per typing speed. */
+1. Store user statistics (WPM, accuracy) in local storage or a database for future reference.
+2. Time mods to be added  
+*/
