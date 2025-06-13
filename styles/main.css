@@ -196,7 +196,7 @@ h1 {
     transform: scale(0.96) rotate(8deg);
 }
 
-.text-box {
+.text-box, .best {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -213,7 +213,10 @@ h1 {
 #word-count,
 #accuracy,
 #timer,
-#error {
+#error,
+#bestWpm,
+#bestAccuracy,
+#bestTime {
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--primary-color);

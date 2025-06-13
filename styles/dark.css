@@ -15,7 +15,8 @@ body {
 
 .text-container,
 #text-display,
-.text-box {
+.text-box,
+.best {
     background: #1e293b;
     color: var(--text-color);
     border-color: var(--border-color);
