@@ -8,7 +8,7 @@
         
         <script src = "https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src = "https://cdnjs.cloudflare.com/ajax/libs/marked/0.7.0/marked.min.js"></script>
-        </head>
+    </head>
     <body>
         <h1>Typing Speed Tester</h1>
         <button id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
@@ -17,9 +17,17 @@
                 <div id = "text-display">
                  <p>Press the "Start" button to begin.</p>
                 </div>
+                <div class="difficulty-selector">
+                    <label for="difficulty">Difficulty:</label>
+                    <select id="difficulty">
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
                 <button id = "start-button">Start</button>
           </div>
-        
+          <input type="text" id="user-input" placeholder="Start typing here..." autocomplete="off" />
             <div class = "text-box">
                 <div id = "word-count">WPM:<span id = "count">0</span></div>
                 <div id = "accuracy">Accuracy: <span id = "accuracy-percentage">0</span>%</div>
@@ -32,7 +40,7 @@
                 <div id="bestAccuracy">Best Accuracy: <span id="best-accuracy">0</span>%</div>
                 <div id="bestTime">Time: <span id="best-time">0</span></div>
             </div>
-            <input type="text" id="user-input" placeholder="Start typing here..." autocomplete="off" />
+            
             
             <div id = "result"></div>
             <button id = "reset-button">Reset</button>
@@ -41,14 +49,14 @@
               <div class="popup-content">
                 <span id="close-popup" class="close">&times;</span>
                 <div id="popup-message"></div>
-              </div>
             </div>
-            <div class="github-footer">
-              <a href="https://github.com/Euuiiii" target="_blank" class="github-link" title="GitHub Profile">
+        </div>
+        <div class="github-footer">
+            <a href="https://github.com/Euuiiii" target="_blank" class="github-link" title="GitHub Profile">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="github-icon">
-                <span>For more projects, view on GitHub</span>
-              </a>
-            </div>
+                <span><u>View more projects in github.</u></span>
+            </a>
+        </div>
         <script src = "JavaScript/main.js"></script>
         <script src = "JavaScript/theme.js"></script>
     </body>

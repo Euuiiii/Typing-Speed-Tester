@@ -1,69 +1,42 @@
 [
   {
-    "text": "Man is a mystery. It needs to be unravelled, and if you spend your whole life unravelling it, don’t say that you’ve wasted time. I am studying that mystery because I want to be a human being. A reflection on Dostoevsky’s lifelong obsession with the depths of the human soul.",
-    "author": "Fyodor Dostoevsky"
+    "text": "The sun rises over the quiet town, casting long shadows across the empty streets. Birds begin their morning songs, filling the air with sweet melodies. A gentle breeze rustles through the trees, carrying the scent of fresh flowers. People slowly emerge from their homes, starting their daily routines. Children laugh and play in the park, their voices echoing through the neighborhood.",
+    "difficulty": "easy"
   },
   {
-    "text": "I am free and that is why I am lost. The chains that once bound me have fallen away, and yet in this newfound freedom, I wander through the corridors of my own mind, searching for meaning in a world that offers none, questioning every step and every shadow that crosses my path.",
-    "author": "Franz Kafka"
+    "text": "The morning sun casts its golden rays across the dew-kissed meadow, where wildflowers sway gently in the breeze. Butterflies dance from bloom to bloom, their delicate wings catching the light. A family of rabbits emerges from their burrow, their noses twitching as they explore the fresh morning air. Birds sing their morning chorus, each species adding its unique melody to the symphony.",
+    "difficulty": "easy"
   },
   {
-    "text": "In the depth of winter, I finally learned that within me there lay an invincible summer. Even as the cold pressed in from all sides, I discovered a warmth that could not be extinguished, a resilience that persisted despite the absurdity and indifference of the universe.",
-    "author": "Albert Camus"
+    "text": "The beach stretches endlessly along the coastline, its golden sands warmed by the afternoon sun. Waves crash rhythmically against the shore, creating a soothing soundtrack for the day. Seagulls soar overhead, their cries mixing with the sound of the ocean. Children build sandcastles near the water's edge, their laughter carried by the sea breeze.",
+    "difficulty": "easy"
   },
   {
-    "text": "When you change the way you think, you can change the way you feel and act, even if the situation does not change. The power to transform your life lies not in the circumstances you face, but in the thoughts you choose to believe, the stories you tell yourself, and the compassion you extend to your own struggles.",
-    "author": "David D. Burns"
+    "text": "The mountain trail winds its way through the dense forest, offering glimpses of breathtaking views at every turn. Hikers make their way up the path, their footsteps muffled by the soft earth beneath them. The air is crisp and clean, filled with the scent of pine and wildflowers. Birds call to each other from the treetops, their songs echoing through the valley.",
+    "difficulty": "easy"
   },
   {
-    "text": "The darker the night, the brighter the stars; the deeper the grief, the closer is God. In the midst of suffering and despair, when all hope seems lost, it is often then that the light of understanding and faith shines most clearly, illuminating the path forward.",
-    "author": "Fyodor Dostoevsky"
+    "text": "The quantum entanglement of subatomic particles continues to baffle physicists worldwide. When two particles become entangled, their quantum states become correlated, regardless of the distance between them. This means that measuring one particle instantly affects its partner, even if they're light-years apart. The implications of this phenomenon are profound, challenging our understanding of space, time, and causality.",
+    "difficulty": "medium"
   },
   {
-    "text": "There are times when I look at people and see nothing but a collection of habits, fears, and memories, all stitched together by the fragile thread of consciousness. It is in these moments that I wonder if we are truly free, or simply actors reciting lines written by forces we cannot comprehend.",
-    "author": "Franz Kafka"
+    "text": "The technological revolution has transformed the way we live, work, and communicate. Artificial intelligence systems now process vast amounts of data, making decisions that once required human intervention. Machine learning algorithms identify patterns and make predictions with increasing accuracy. Cloud computing enables instant access to information and resources from anywhere in the world.",
+    "difficulty": "medium"
   },
   {
-    "text": "Life can be magnificent and overwhelming that is its whole tragedy. Without beauty, love, or danger it would almost be easy to live. But to live truly is to embrace the chaos, to find meaning in the fleeting moments, and to accept that suffering is as much a part of existence as joy.",
-    "author": "Albert Camus"
+    "text": "The climate crisis presents unprecedented challenges to our planet's ecosystems. Rising global temperatures trigger cascading effects throughout the environment. Melting ice caps contribute to sea level rise, threatening coastal communities. Extreme weather events become more frequent and intense. Ocean acidification endangers marine life and coral reefs.",
+    "difficulty": "medium"
   },
   {
-    "text": "Remember that thoughts are just thoughts—they are not facts. You are not your thoughts, and you are not obligated to believe everything your mind tells you. By learning to observe your thinking with curiosity and kindness, you can begin to change your relationship with your mind and your life.",
-    "author": "David D. Burns"
+    "text": "The intricate dance of neural networks within the human brain represents one of nature's most complex systems. Each neuron, a microscopic computational unit, forms thousands of connections with its neighbors, creating an unfathomably dense web of information processing. When we experience consciousness, billions of these neurons fire in precise patterns, their electrical impulses traveling at speeds up to 268 miles per hour.",
+    "difficulty": "hard"
   },
   {
-    "text": "Pain and suffering are always inevitable for a large intelligence and a deep heart. The really great men must, I think, have great sadness on earth. Yet it is through this suffering that we come to understand ourselves and the world more deeply.",
-    "author": "Fyodor Dostoevsky"
+    "text": "The mathematical foundations of modern physics reveal the elegant structure underlying our universe. General relativity describes gravity as the curvature of spacetime, where mass and energy determine the geometry of the universe. The mathematics of quantum field theory incorporates both quantum mechanics and special relativity, describing particles as excitations of underlying fields.",
+    "difficulty": "hard"
   },
   {
-    "text": "A book must be the axe for the frozen sea within us. Only when we are shaken from our complacency, when we are forced to confront the truths we would rather ignore, do we begin to awaken to the possibilities of our own existence.",
-    "author": "Franz Kafka"
-  },
-  {
-    "text": "Imagination is more important than knowledge. For knowledge is limited, whereas imagination embraces the entire world, stimulating progress, giving birth to evolution. It is by daring to imagine what does not yet exist that we move beyond the boundaries of what is known and create the future.",
-    "author": "Albert Einstein"
-  },
-  {
-    "text": "The important thing is not to stop questioning. Curiosity has its own reason for existing. One cannot help but be in awe when contemplating the mysteries of eternity, of life, of the marvelous structure of reality. It is enough if one tries merely to comprehend a little of this mystery every day.",
-    "author": "Albert Einstein"
-  },
-  {
-    "text": "If you want to find the secrets of the universe, think in terms of energy, frequency and vibration. The day science begins to study non-physical phenomena, it will make more progress in one decade than in all the previous centuries of its existence.",
-    "author": "Nikola Tesla"
-  },
-  {
-    "text": "Our virtues and our failings are inseparable, like force and matter. When they separate, man is no more. The present is theirs; the future, for which I have really worked, is mine.",
-    "author": "Nikola Tesla"
-  },
-  {
-        "text": "The greatest scientists are artists as well. They see the world not just as it is, but as it could be, and they dare to dream of possibilities that others cannot even imagine. It is this creative vision that drives innovation and leads to breakthroughs that change the course of history.",
-        "author": "Albert Einstein"
-  },
-  {
-        "text": "The most beautiful experience we can have is the mysterious. It is the fundamental emotion which stands at the cradle of true art and true science. Whoever does not know it and can no longer pause to wonder and stand rapt in awe, is as good as dead; his eyes are closed.",
-        "author": "Albert Einstein"
-  },
-  {
-        "text" : "The quality, relevance, and impact of the products and services output by the technology sector can only be improved by having the people who are building them be demographically representative of the people who are using them."
+    "text": "The cryptographic foundations of modern computer security rely on complex mathematical problems that are computationally infeasible to solve. Public-key cryptography uses pairs of keys for encryption and decryption, where the public key can be freely distributed while the private key remains secret. Hash functions create fixed-length outputs from variable-length inputs, with the property that it's computationally infeasible to find two inputs that produce the same output.",
+    "difficulty": "hard"
   }
 ]

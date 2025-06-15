@@ -10,6 +10,7 @@ const error = document.getElementById('error');
 const bestWpm = document.getElementById("bestWpm");
 const bestAccuracy = document.getElementById("bestAccuracy");
 const bestTime = document.getElementById("bestTime");
+const difficultySelect = document.getElementById('difficulty');
 
 let startTime = null;
 let timerInterval = null;
@@ -17,22 +18,31 @@ let timerInterval = null;
 // Load best 
 loadBestStats();
 
+// Function to get quotes based on difficulty
+function getQuotesByDifficulty(quotes, difficulty) {
+  return quotes.filter(quote => quote.difficulty === difficulty);
+}
+
 // start button -> loads a random quote -> resets UI -> enables typing
 startBtn.addEventListener("click", () => {
   startBtn.disabled = true;
   resetBtn.disabled = false;
+  const selectedDifficulty = difficultySelect.value;
+  
   fetch("JavaScript/quote.json")
     .then(res => res.json())
     .then(data => {
-      const randomQuote = data[Math.floor(Math.random() * data.length)];
+      const filteredQuotes = getQuotesByDifficulty(data, selectedDifficulty);
+      if (filteredQuotes.length === 0) {
+        textDisplay.textContent = "No quotes available for this difficulty level.";
+        return;
+      }
+      const randomQuote = filteredQuotes[Math.floor(Math.random() * filteredQuotes.length)];
       const quoteWords = randomQuote.text.split(' ');
       textDisplay.innerHTML = `
         <span class="quote-text">
           ${quoteWords.map(word => `<span class="quote-word">${word}</span>`).join(' ')}
         </span>
-        <div class="author-section">
-          ${randomQuote.author ? `<span class="author">— ${randomQuote.author}</span>` : ""}
-        </div>
       `;
       userInput.value = '';
       userInput.disabled = false;
@@ -158,29 +168,39 @@ document.getElementById('close-popup').onclick = function () {
 
 // Update -> store best stats in localStorage
 function updateBestStats(currentWpm, currentAccuracy, currentTime) {
-  const bestWpmValue = parseInt(localStorage.getItem('bestWpm')) || 0;
-  const bestAccuracyValue = parseFloat(localStorage.getItem('bestAccuracy')) || 0;
-  const bestTimeValue = parseFloat(localStorage.getItem('bestTime')) || Infinity;
+  const difficulty = difficultySelect.value;
+  const bestWpmKey = `bestWpm_${difficulty}`;
+  const bestAccuracyKey = `bestAccuracy_${difficulty}`;
+  const bestTimeKey = `bestTime_${difficulty}`;
+
+  const bestWpmValue = parseInt(localStorage.getItem(bestWpmKey)) || 0;
+  const bestAccuracyValue = parseFloat(localStorage.getItem(bestAccuracyKey)) || 0;
+  const bestTimeValue = parseFloat(localStorage.getItem(bestTimeKey)) || Infinity;
 
   if (currentWpm > bestWpmValue) {
-    localStorage.setItem('bestWpm', currentWpm);
+    localStorage.setItem(bestWpmKey, currentWpm);
     document.getElementById('best-wpm').textContent = currentWpm;
   }
   if (parseFloat(currentAccuracy) > bestAccuracyValue) {
-    localStorage.setItem('bestAccuracy', currentAccuracy);
+    localStorage.setItem(bestAccuracyKey, currentAccuracy);
     document.getElementById('best-accuracy').textContent = parseFloat(currentAccuracy).toFixed(2);
   }
   if (currentTime < bestTimeValue) {
-    localStorage.setItem('bestTime', currentTime);
+    localStorage.setItem(bestTimeKey, currentTime);
     document.getElementById('best-time').textContent = formatTime(currentTime);
   }
 }
 
 // Load best stats on page load
 function loadBestStats() {
-  const bestWpmValue = parseInt(localStorage.getItem('bestWpm')) || 0;
-  const bestAccuracyValue = parseFloat(localStorage.getItem('bestAccuracy')) || 0;
-  const bestTimeValue = parseFloat(localStorage.getItem('bestTime'));
+  const difficulty = difficultySelect.value;
+  const bestWpmKey = `bestWpm_${difficulty}`;
+  const bestAccuracyKey = `bestAccuracy_${difficulty}`;
+  const bestTimeKey = `bestTime_${difficulty}`;
+
+  const bestWpmValue = parseInt(localStorage.getItem(bestWpmKey)) || 0;
+  const bestAccuracyValue = parseFloat(localStorage.getItem(bestAccuracyKey)) || 0;
+  const bestTimeValue = parseFloat(localStorage.getItem(bestTimeKey));
 
   document.getElementById('best-wpm').textContent = bestWpmValue;
   document.getElementById('best-accuracy').textContent = bestAccuracyValue.toFixed(2);
@@ -205,3 +225,8 @@ function showResultPopup(wpmValue, errorCount, accuracyValue) {
   }
   popup.style.display = 'flex';
 }
+
+// Add event listener for difficulty change
+difficultySelect.addEventListener('change', () => {
+  loadBestStats();
+});

@@ -86,3 +86,11 @@ body {
   background: #506c5a;
   border-radius: 0.2em;
 }
+
+.github-link {
+    color: #e2e8f0;
+}
+
+.github-icon {
+    filter: invert(1);
+}
