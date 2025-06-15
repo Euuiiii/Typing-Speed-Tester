@@ -74,3 +74,15 @@ body {
     background-color: rgba(248, 113, 113, 0.1);
     color: var(--error-color);
 }
+
+
+.popup-content {
+  background: #1d1b1b;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.15);
+}
+
+.correct-word {
+  color: inherit;
+  background: #506c5a;
+  border-radius: 0.2em;
+}

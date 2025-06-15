@@ -11,7 +11,6 @@ const bestWpm = document.getElementById("bestWpm");
 const bestAccuracy = document.getElementById("bestAccuracy");
 const bestTime = document.getElementById("bestTime");
 
-// Initialize variables
 let startTime = null;
 let timerInterval = null;
 
@@ -202,7 +201,7 @@ function showResultPopup(wpmValue, errorCount, accuracyValue) {
   if (errorCount === 0) {
     popupMsg.textContent = `🎉 Perfect! Your typing speed is ${wpmValue} WPM with 100% accuracy.`;
   } else {
-    popupMsg.textContent = `Your typing speed is ${wpmValue} WPM with ${errorCount} error(s) and an accuracy of ${accuracyValue}%.`;
+    popupMsg.textContent = `🎉 Your typing speed is ${wpmValue} WPM with ${errorCount} error(s) and an accuracy of ${accuracyValue}%.`;
   }
   popup.style.display = 'flex';
 }
